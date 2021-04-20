@@ -22,10 +22,12 @@ export class RegisterPage implements OnInit {
     ) {
     this.signUpForm = this.formBuilder.group({
       user: this.formBuilder.group({
-        name: ['', Validators.compose([Validators.required])],
-        email: ['', Validators.compose([Validators.required, Validators.email])],
+        email: ['', Validators.compose([Validators.required])],
         password: ['', Validators.compose([Validators.required])],
-        password_confirmation: ['', Validators.compose([Validators.required])]
+        password_confirmation: ['', Validators.compose([Validators.required])],
+        name: [''],
+        second_name: [''],
+        passport: [''],
       }),
     });
   }
@@ -39,7 +41,7 @@ export class RegisterPage implements OnInit {
     //   if (response.status === 200) {
     //     this.authenticationService.login(response.rows);
     //   } else {
-        this.alertService.alert('Warning', 'asd');
+    //    this.alertService.alert('Warning', 'asd');
     //   }
     // }, (error) => {
     //     this.signUpForm.controls['password'].reset();

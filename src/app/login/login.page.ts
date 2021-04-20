@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
     private alertService: AlertService) {
     this.signInForm = this.formBuilder.group({
       user: this.formBuilder.group({
-        email: ['', Validators.compose([Validators.required, Validators.email])],
+        email: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
         password: ['', Validators.compose([Validators.required, Validators.minLength(5)])]
       }),
     });
@@ -30,7 +30,46 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  resetPassword() {
+    this.alertService.alert(
+      'Forgot your password?', 'Enter your email / phone for recovery',
+      [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Send code',
+          handler: data => {
+            console.log('Send clicked');
+          }
+        }
+      ],
+      [
+        {
+          name: 'email',
+          placeholder: 'Email / Phone'
+        }
+      ]
+    );
+  }
+
   submitSignInForm() {
+    this.alertService.alert(
+      'Something went wrong', 'Wrong login or password',
+      [
+        {
+          text: 'Ok',
+          handler: data => {
+            console.log('Send clicked');
+          }
+        }
+      ],
+      []
+    );
     // this.apiService.signIn(this.signInForm.value).subscribe(response => {
     //   console.log('response is: ', response);
     //   if (response.status === 200) {

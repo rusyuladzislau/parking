@@ -24,3 +24,81 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.input-field {
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 19px;
+  width: 100% !important;
+}
+
+.submit-button {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  text-align: center;
+  text-transform: none!important;
+  width: 100% !important;
+  --box-shadow: 0px 4px 19px rgba(0, 96, 255, 0.25);
+  --border-radius: 34px;
+}
+
+.grid-text-center {
+  text-align: center;
+}
+
+.margin-bottom-small {
+  margin-bottom: 15px;
+}
+
+.margin-bottom-medium {
+  margin-bottom: 50px;
+}
+
+.title-toolbar {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  
+  transform: translate(-50%,-50%) !important;
+  
+}
+
+.required-field {
+  color: #ec1935 !important;
+}
+
+.center-content-auth-page {
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media (min-width: 768px) {
+  .center-content-auth-page {
+    height: calc(100vh - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
